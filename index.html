@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD Profissional</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Gestão de Produtos</h1>
+
+    <div class="dashboard">
+        <div id="totalProdutos"></div>
+        <div id="valorTotal"></div>
+    </div>
+
+    
+
+    <form id="formProduto">
+
+        <input id="nomeProduto" placeholder="Nome do produto" required>
+
+        <input id="precoProduto" type="number" step="0.01" placeholder="Preço" required>
+
+        <button>Salvar</button>
+
+    </form>
+
+    <div class="search-box">
+        <span class="icon">🔍</span>
+        <input
+            type="text"
+            id="filtroProduto"
+            placeholder="Buscar produto..."
+        >
+    </div>
+
+    <ul id="listaProdutos"></ul>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
