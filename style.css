@@ -1,214 +1,176 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #0f172a;
+/* 1. RESET E CONFIGURAÇÕES GLOBAIS */
+* {
+    box-sizing: border-box; /* Essencial para o layout não quebrar no celular */
     margin: 0;
     padding: 0;
-    color: #e2e8f0;
 }
 
+html, body {
+    height: 100%;
+}
 
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 15px; /* Margem de segurança para o container não encostar na tela */
+}
+
+/* 2. CONTAINER PRINCIPAL */
 .container {
     width: 100%;
-    max-width: 600px;
-    margin: 40px auto;
+    max-width: 500px; /* Largura ideal para leitura e uso */
     background: #1e293b;
     padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
-
 
 h1 {
     text-align: center;
     color: #38bdf8;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
 }
 
- 
+/* 3. DASHBOARD (RESUMO) */
 .dashboard {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
     background: #0f172a;
-    padding: 10px 15px;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
     font-size: 14px;
     color: #94a3b8;
+    border: 1px solid #334155;
 }
 
- FORM 
+/* 4. FORMULÁRIO E INPUTS */
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 input {
-    padding: 12px;
+    padding: 14px;
     border-radius: 8px;
     border: 1px solid #334155;
     background: #0f172a;
     color: white;
     outline: none;
     width: 100%;
-    box-sizing: border-box;
+    font-size: 16px; /* 16px evita o zoom automático indesejado no iOS */
 }
 
 input:focus {
     border-color: #38bdf8;
 }
 
-
 button {
-    padding: 12px;
+    padding: 14px;
     border: none;
     border-radius: 8px;
     background: #38bdf8;
     color: #0f172a;
     font-weight: bold;
+    font-size: 16px;
     cursor: pointer;
+    transition: background 0.2s;
 }
 
 button:hover {
     background: #0ea5e9;
 }
 
+/* 5. BUSCA E LISTA */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #0f172a;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    margin-top: 20px;
+}
+
+.search-box input {
+    border: none;
+    padding: 0 0 0 10px;
+}
+
+h2 {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #94a3b8;
+    border-left: 4px solid #38bdf8;
+    padding-left: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
 #listaProdutos {
     list-style: none;
-    padding: 0;
     margin-top: 15px;
 }
 
 li {
     background: #0f172a;
-    margin-top: 10px;
-    padding: 12px;
-    border-radius: 8px;
-
+    margin-bottom: 12px;
+    padding: 15px;
+    border-radius: 10px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+    flex-direction: column; /* Empilha no mobile por padrão */
+    gap: 12px;
     border: 1px solid #334155;
+    
+}
+
+li span {
+    font-weight: 500;
+    word-break: break-all;
+    font-size: 1.1rem; /* Deixa o nome do produto levemente maior */
+    margin-bottom: 5px; /* Espaço entre o texto e os botões */
+}
+
+/* 6. BOTÕES DE AÇÃO (EDITAR/EXCLUIR) */
+.acoes {
+    display: flex;
     gap: 10px;
 }
 
-
-.acoes {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-}
-
 .acoes button {
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-size: 12px;
-    cursor: pointer;
-    border: none;
-}
-
-.editar {
-    background: #22c55e;
-    color: white;
-}
-
-.excluir {
-    background: #ef4444;
-    color: white;
-}
-
-.acoes button:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
-}
-
-
-.search-box {
+    flex: 1; /* Faz os dois botões terem o mesmo tamanho */
+    padding: 10px;
+    font-size: 13px;
     display: flex;
     align-items: center;
-
-    background: #0f172a;
-    padding: 10px 12px;
-    border-radius: 8px;
-
-    border: 1px solid #334155;
-    margin-top: 15px;
+    justify-content: center;
+    gap: 5px;
 }
 
-.search-box input {
-    flex: 1;
-    border: none;
-    background: transparent;
-    color: white;
-    outline: none;
-    padding-left: 8px;
-}
+.editar { background: #22c55e; color: white; }
+.excluir { background: #ef4444; color: white; }
 
-.icon {
-    color: #94a3b8;
-    font-size: 16px;
-}
-
-
-h2 {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #94a3b8;
-    border-left: 3px solid #38bdf8;
-    padding-left: 8px;
-}
-
-
-
-@media (max-width: 768px) {
-
-    .container {
-        margin: 20px;
-        padding: 20px;
-    }
-
-    .dashboard {
-        flex-direction: column;
-        text-align: center;
-        gap: 5px;
-    }
-
+/* 7. RESPONSIVIDADE PARA TELAS MAIORES (TABLET/PC) */
+@media (min-width: 600px) {
     li {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row; /* Volta a ficar lado a lado no PC */
+        justify-content: space-between;
+        align-items: center;
     }
-
+    
     .acoes {
-        width: 100%;
-        justify-content: flex-start;
+        width: auto;
     }
-}
-
- 
-@media (max-width: 480px) {
-
-    .container {
-        margin: 10px;
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 20px;
-    }
-
-    button {
-        width: 100%;
-    }
-
-    .acoes {
-        flex-direction: column;
-        width: 100%;
-    }
-
+    
     .acoes button {
-        width: 100%;
+        flex: none;
+        padding: 8px 15px;
     }
 }
