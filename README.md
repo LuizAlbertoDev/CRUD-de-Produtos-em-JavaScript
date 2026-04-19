@@ -1,80 +1,111 @@
-# 📦 CRUD de Produtos - JavaScript Puro
+# 📦 CRUD de Produtos - JavaScript Vanilla
 
-Sistema de cadastro de produtos desenvolvido com HTML, CSS e JavaScript puro, com foco em lógica de programação, manipulação do DOM e armazenamento local (LocalStorage).
-
----
-
-## 🚀 Demonstração
-
-![FotoProjeto](img/image.png)
+![Status](https://img.shields.io/badge/status-concluído-brightgreen)
+![Frontend](https://img.shields.io/badge/frontend-html%2Fcss%2Fjavascript-blue)
+![Deploy](https://img.shields.io/badge/deploy-github%20pages-success)
+![Version](https://img.shields.io/badge/version-1.0.0-blueviolet)
 
 ---
 
-## ✨ Funcionalidades
+## 🌐 Deploy
 
-- Adicionar produtos  
-- Editar produtos  
-- Remover produtos  
-- Buscar produtos em tempo real  
-- Salvamento automático com LocalStorage  
-- Dashboard com total de produtos e valor total  
+Acesse o projeto online:  
+https://luizalbertodev.github.io/CRUD-de-Produtos-em-JavaScript/
 
 ---
 
-## 🧠 Tecnologias utilizadas
+## 📌 Sobre o projeto
 
-- HTML5  
-- CSS3  
-- JavaScript
-- LocalStorage API  
+Sistema de CRUD de produtos desenvolvido com HTML, CSS e JavaScript puro (Vanilla JS).
+
+O projeto simula uma aplicação real de gestão de produtos, com foco em:
+
+- Manipulação do DOM  
+- Lógica de programação  
+- Eventos em JavaScript  
+- Persistência de dados com LocalStorage  
+- Interface simples e funcional  
+
+---
+
+## 🚀 Tecnologias utilizadas
+
+HTML5  
+CSS3  
+JavaScript 
+LocalStorage API  
+
+---
+
+## 📸 Preview
+
+Imagem do projeto:  
+![Imagem Projeto](img/image.png)  
+
+---
+
+## ⚙️ Funcionalidades
+
+- Cadastro de produtos  
+- Edição de produtos  
+- Remoção de produtos  
+- Busca em tempo real  
+- Persistência de dados no navegador  
+- Dashboard com total e valor acumulado  
 
 ---
 
 ## 📁 Estrutura do projeto
 
-/
-- index.html  
-- style.css  
-- script.js  
+CRUD-de-Produtos-em-JavaScript/  
+├── assets/  
+│   └── img/  
+│       └── preview.png  
+├── index.html  
+├── style.css  
+├── script.js  
+└── README.md  
 
 ---
 
-## ⚙️ Como executar o projeto
+## ▶️ Como executar
 
-1. Clone o repositório:
+Clone o repositório:  
+git clone https://github.com/LuizAlbertoDev/CRUD-de-Produtos-em-JavaScript  
 
-git clone https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git
-
-2. Abra o arquivo index.html no navegador
+Abra a pasta e execute o arquivo index.html no navegador.
 
 ---
 
-## 📚 Aprendizados
+## 🧠 Aprendizados
 
 - Manipulação do DOM  
-- Eventos em JavaScript  
-- CRUD completo  
-- Organização de código  
-- Uso do LocalStorage  
-- Lógica de programação aplicada  
+- CRUD completo com JavaScript puro  
+- Uso de LocalStorage  
+- Organização de código frontend  
+- Lógica aplicada a sistemas reais  
 
 ---
 
-## 📌 Status do projeto
+## 📌 Roadmap
 
-Finalizado (versão base)  
-Em melhorias futuras  
+- Melhorar responsividade  
+- Adicionar modal de confirmação  
+- Migrar para React  
+- Criar API backend futuramente  
 
 ---
 
 ## 👨‍💻 Autor
 
-Luiz Alberto  
+Luiz Alberto Huller da Silva  
+
 GitHub: https://github.com/LuizAlbertoDev  
 LinkedIn: https://linkedin.com/in/luizalbertodev  
+Email: luizalbertodev@gmail.com  
 
 ---
 
-## ⭐ Se curtiu o projeto
+## 📄 Licença
 
-Deixe uma estrela no repositório 🚀
+Projeto para fins de estudo e portfólio pessoal.
