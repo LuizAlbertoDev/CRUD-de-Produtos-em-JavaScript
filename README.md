@@ -51,7 +51,7 @@ O projeto simula uma aplicação real de gestão de produtos, com foco em:
 ## 📸 Preview
 
 Imagem do projeto:  
-![Imagem Projeto](img/image.png)  
+![Imagem Projeto](img/image.png)
 
 ---
 
