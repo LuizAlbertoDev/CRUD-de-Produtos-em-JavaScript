@@ -1,4 +1,4 @@
-# 📦 CRUD de Produtos - JavaScript Vanilla
+# 📦 CRUD de Produtos - JavaScript 
 
 ![Status](https://img.shields.io/badge/status-concluído-brightgreen)
 ![Frontend](https://img.shields.io/badge/frontend-html%2Fcss%2Fjavascript-blue)
@@ -30,10 +30,21 @@ O projeto simula uma aplicação real de gestão de produtos, com foco em:
 
 ## 🚀 Tecnologias utilizadas
 
-HTML5  
-CSS3  
-JavaScript 
-LocalStorage API  
+![HTML](https://img.shields.io/badge/HTML5-orange)
+![CSS](https://img.shields.io/badge/CSS3-blue)
+![JavaScript](https://img.shields.io/badge/JavaScript-yellow)
+![LocalStorage](https://img.shields.io/badge/LocalStorage-browser_API-4CAF50)
+![DOM](https://img.shields.io/badge/DOM-manipulation-9cf)
+![Git](https://img.shields.io/badge/Git-red)
+![GitHub](https://img.shields.io/badge/GitHub-black)
+
+- HTML5  
+- CSS3  
+- JavaScript
+- LocalStorage
+- DOM
+- Git  
+- GitHub  
 
 ---
 
