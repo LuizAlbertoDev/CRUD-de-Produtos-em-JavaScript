@@ -1,44 +1,42 @@
 const form = document.getElementById('formProduto');
 const lista = document.getElementById('listaProdutos');
 const filtro = document.getElementById('filtroProduto');
-
 const totalProdutos = document.getElementById('totalProdutos');
 const valorTotal = document.getElementById('valorTotal');
 
 let produtos = [];
 let editando = null;
 
-// LOAD
 function carregar() {
-    const data = localStorage.getItem('produtos');
-    produtos = data ? JSON.parse(data) : [];
+    try {
+        const dados = JSON.parse(localStorage.getItem('produtos'));
+        produtos = Array.isArray(dados) ? dados : [];
+    } catch {
+        produtos = [];
+    }
 }
 
-// SAVE
 function salvar() {
     localStorage.setItem('produtos', JSON.stringify(produtos));
 }
 
-// SUBMIT
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-    const nome = document.getElementById('nomeProduto').value;
-    const preco = parseFloat(document.getElementById('precoProduto').value);
+    const nome = document.getElementById('nomeProduto').value.trim();
+    const preco = Number(document.getElementById('precoProduto').value);
 
-    if (!nome || preco <= 0) return;
+    if (!nome || !Number.isFinite(preco) || preco <= 0) {
+        return;
+    }
 
-    if (editando) {
-        produtos = produtos.map(p =>
-            p.id === editando ? { ...p, nome, preco } : p
+    if (editando !== null) {
+        produtos = produtos.map((produto) =>
+            produto.id === editando ? { ...produto, nome, preco } : produto
         );
         editando = null;
     } else {
-        produtos.push({
-            id: Date.now(),
-            nome,
-            preco
-        });
+        produtos.push({ id: Date.now(), nome, preco });
     }
 
     salvar();
@@ -46,64 +44,65 @@ form.addEventListener('submit', (e) => {
     render();
 });
 
-// RENDER
 function render() {
-
-    const filtroTexto = filtro.value.toLowerCase();
-
-    lista.innerHTML = '';
+    const texto = filtro.value.trim().toLowerCase();
+    lista.replaceChildren();
 
     produtos
-        .filter(p => p.nome.toLowerCase().includes(filtroTexto))
-        .forEach(produto => {
+        .filter((produto) => produto.nome.toLowerCase().includes(texto))
+        .forEach((produto) => {
+            const item = document.createElement('li');
+            const descricao = document.createElement('span');
+            descricao.textContent = `${produto.nome} - ${produto.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
 
-            const li = document.createElement('li');
+            const acoes = document.createElement('div');
+            acoes.className = 'acoes';
 
-            li.innerHTML = `
-                <span>${produto.nome} - R$ ${produto.preco.toFixed(2)}</span>
+            const botaoEditar = document.createElement('button');
+            botaoEditar.type = 'button';
+            botaoEditar.className = 'editar';
+            botaoEditar.textContent = 'Editar';
+            botaoEditar.addEventListener('click', () => editar(produto.id));
 
-                <div class="acoes">
-                    <button class="editar" onclick="editar(${produto.id})">✏️Editar</button>
-                    <button class="excluir" onclick="excluir(${produto.id})">🗑️Excluir</button>
-                </div>
-            `;
+            const botaoExcluir = document.createElement('button');
+            botaoExcluir.type = 'button';
+            botaoExcluir.className = 'excluir';
+            botaoExcluir.textContent = 'Excluir';
+            botaoExcluir.addEventListener('click', () => excluir(produto.id));
 
-            lista.appendChild(li);
+            acoes.append(botaoEditar, botaoExcluir);
+            item.append(descricao, acoes);
+            lista.appendChild(item);
         });
 
     atualizarDashboard();
 }
 
-// EDITAR
 function editar(id) {
-    const p = produtos.find(x => x.id === id);
+    const produto = produtos.find((item) => item.id === id);
+    if (!produto) return;
 
-    document.getElementById('nomeProduto').value = p.nome;
-    document.getElementById('precoProduto').value = p.preco;
-
+    document.getElementById('nomeProduto').value = produto.nome;
+    document.getElementById('precoProduto').value = produto.preco;
     editando = id;
 }
 
-// EXCLUIR (SEM MODAL)
 function excluir(id) {
-    produtos = produtos.filter(p => p.id !== id);
+    produtos = produtos.filter((produto) => produto.id !== id);
+    if (editando === id) {
+        editando = null;
+        form.reset();
+    }
     salvar();
     render();
 }
 
-// DASHBOARD
 function atualizarDashboard() {
-
-    const total = produtos.length;
-    const soma = produtos.reduce((acc, p) => acc + p.preco, 0);
-
-    totalProdutos.innerText = `Produtos: ${total}`;
-    valorTotal.innerText = `Total: R$ ${soma.toFixed(2)}`;
+    const soma = produtos.reduce((total, produto) => total + produto.preco, 0);
+    totalProdutos.textContent = `Produtos: ${produtos.length}`;
+    valorTotal.textContent = `Total: ${soma.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
 }
 
-// FILTRO
 filtro.addEventListener('input', render);
-
-// INIT
 carregar();
 render();
