@@ -1,20 +1,16 @@
-# 📦 CRUD de Produtos - JavaScript 
+# CRUD de Produtos - JavaScript
 
-![Status](https://img.shields.io/badge/status-concluído-brightgreen)
-![Frontend](https://img.shields.io/badge/frontend-html%2Fcss%2Fjavascript-blue)
-![Deploy](https://img.shields.io/badge/deploy-github%20pages-success)
-![Version](https://img.shields.io/badge/version-1.0.0-blueviolet)
 
 ---
 
-## 🌐 Deploy
+## Deploy
 
 Acesse o projeto online:  
 https://luizalbertodev.github.io/CRUD-de-Produtos-em-JavaScript/
 
 ---
 
-## 📌 Sobre o projeto
+## Sobre o projeto
 
 Sistema de CRUD de produtos desenvolvido com HTML, CSS e JavaScript puro (Vanilla JS).
 
@@ -28,15 +24,8 @@ O projeto simula uma aplicação real de gestão de produtos, com foco em:
 
 ---
 
-## 🚀 Tecnologias utilizadas
+## Tecnologias utilizadas
 
-![HTML](https://img.shields.io/badge/HTML5-orange)
-![CSS](https://img.shields.io/badge/CSS3-blue)
-![JavaScript](https://img.shields.io/badge/JavaScript-yellow)
-![LocalStorage](https://img.shields.io/badge/LocalStorage-browser_API-4CAF50)
-![DOM](https://img.shields.io/badge/DOM-manipulation-9cf)
-![Git](https://img.shields.io/badge/Git-red)
-![GitHub](https://img.shields.io/badge/GitHub-black)
 
 - HTML5  
 - CSS3  
@@ -48,14 +37,14 @@ O projeto simula uma aplicação real de gestão de produtos, com foco em:
 
 ---
 
-## 📸 Preview
+## Preview
 
 Imagem do projeto:  
 ![Imagem Projeto](img/image.png)
 
 ---
 
-## ⚙️ Funcionalidades
+## Funcionalidades
 
 - Cadastro de produtos  
 - Edição de produtos  
@@ -66,7 +55,7 @@ Imagem do projeto:
 
 ---
 
-## 📁 Estrutura do projeto
+## Estrutura do projeto
 
 CRUD-de-Produtos-em-JavaScript/  
 ├── assets/  
@@ -79,7 +68,7 @@ CRUD-de-Produtos-em-JavaScript/
 
 ---
 
-## ▶️ Como executar
+## Como executar
 
 Clone o repositório:  
 git clone https://github.com/LuizAlbertoDev/CRUD-de-Produtos-em-JavaScript  
@@ -88,7 +77,7 @@ Abra a pasta e execute o arquivo index.html no navegador.
 
 ---
 
-## 🧠 Aprendizados
+## Aprendizados
 
 - Manipulação do DOM  
 - CRUD completo com JavaScript puro  
@@ -98,7 +87,7 @@ Abra a pasta e execute o arquivo index.html no navegador.
 
 ---
 
-## 📌 Roadmap
+## Roadmap
 
 - Melhorar responsividade  
 - Adicionar modal de confirmação  
@@ -107,7 +96,7 @@ Abra a pasta e execute o arquivo index.html no navegador.
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 
 Luiz Alberto Huller da Silva  
 
@@ -117,6 +106,6 @@ Email: luizalbertodev@gmail.com
 
 ---
 
-## 📄 Licença
+## Licença
 
 Projeto para fins de estudo e portfólio pessoal.
